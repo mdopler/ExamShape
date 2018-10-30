@@ -8,27 +8,26 @@ import java.util.Collections;
 
 import org.junit.Test;
 
-//Every test runs green on my machine: 16/16 Runs, 0 Errors, 0 Failures.
-public class MidtermJUnitTests {
+public class ShapeJUnitTests {
 	
 	//Rectangle tests.
 
 	@Test
-	public void Rectangle_Constructor_test() {
-		Rectangle recTest = new Rectangle(1,1);
-		assertTrue(recTest instanceof Rectangle);
+	public void Rectangle_test() {
+		Rectangle rectangleTest = new Rectangle(2,2);
+		assertTrue(rectangleTest instanceof Rectangle);
 	}
 
 	@Test
-	public void Rectangle_WidthGetter_test() {
-		Rectangle recTest = new Rectangle(1,2);
-		assertEquals(recTest.getiWidth(), 1);
+	public void Rectangle_Width_test() {
+		Rectangle rectangleTest = new Rectangle(5,1);
+		assertEquals(rectangleTest.getiWidth(), 5);
 	}
 	
 	@Test
-	public void Rectangle_LengthGetter_test() {
-		Rectangle recTest = new Rectangle(1,2);
-		assertEquals(recTest.getiLength(), 2);
+	public void Rectangle_Length_test() {
+		Rectangle rectangleTest = new Rectangle(1,2);
+		assertEquals(rectangleTest.getiLength(), 2);
 	}
 	
 	@Test
