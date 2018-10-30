@@ -14,89 +14,130 @@ public class ShapeJUnitTests {
 
 	@Test
 	public void Rectangle_test() {
+		
 		Rectangle rectangleTest = new Rectangle(2,2);
+		
 		assertTrue(rectangleTest instanceof Rectangle);
+		
 	}
 
 	@Test
-	public void Rectangle_Width_test() {
+	public void Rectangle_Width_Get_test() {
+		
 		Rectangle rectangleTest = new Rectangle(5,1);
+		
 		assertEquals(rectangleTest.getiWidth(), 5);
+		
 	}
 	
 	@Test
 	public void Rectangle_Length_test() {
-		Rectangle rectangleTest = new Rectangle(1,2);
-		assertEquals(rectangleTest.getiLength(), 2);
+		
+		Rectangle rectangleTest = new Rectangle(1,9);
+		
+		assertEquals(rectangleTest.getiLength(), 9);
+		
 	}
 	
 	@Test
-	public void Rectangle_WidthSetter_test() {
-		Rectangle recTest = new Rectangle(1,2);
-		recTest.setiWidth(100);
-		assertEquals(recTest.getiWidth(), 100);
+	public void Rectangle_Width_Set_test() {
+		
+		Rectangle rectangleTest = new Rectangle(1,1);
+		
+		rectangleTest.setiWidth(7);
+		
+		assertEquals(rectangleTest.getiWidth(), 7);
+		
 	}
 	
 	@Test
-	public void Rectangle_LengthSetter_test() {
-		Rectangle recTest = new Rectangle(1,2);
-		recTest.setiLength(100);
-		assertEquals(recTest.getiLength(), 100);
+	public void Rectangle_Length_Set_test() {
+		
+		Rectangle rectangleTest = new Rectangle(1,1);
+		
+		rectangleTest.setiLength(5);
+		
+		assertEquals(rectangleTest.getiLength(), 5);
+		
 	}
 	
 	@Test
-	public void Rectangle_area_test() {
-		Rectangle recTest = new Rectangle(4,6);
-		assertTrue(recTest.area() == 24.0);
+	public void Rectangle_Area_test() {
+		
+		Rectangle rectangleTest = new Rectangle(8,7);
+		
+		assertTrue(rectangleTest.area() == 56);
+		
 	}
 	
 	@Test
-	public void Rectangle_perimeter_test() {
-		Rectangle recTest = new Rectangle(5,6);
-		assertTrue(recTest.perimeter() == 22.0);
+	public void Rectangle_Perimeter_test() {
+		
+		Rectangle rectangleTest = new Rectangle(7,8);
+		
+		assertTrue(rectangleTest.perimeter() == 30);
+		
 	}
 	
 	@Test
 	public void Rectangle_compareTo_test() {
-		Rectangle[] recTestArray = new Rectangle[5];
-		Rectangle recTest1 = new Rectangle(1,6);
-		Rectangle recTest2 = new Rectangle(2,6);
-		Rectangle recTest3 = new Rectangle(6,3);
-		Rectangle recTest4 = new Rectangle(6,4);
-		Rectangle recTest5 = new Rectangle(5,6);
-		recTestArray[0] = recTest3;
-		recTestArray[1] = recTest2;
-		recTestArray[2] = recTest5;
-		recTestArray[3] = recTest4;
-		recTestArray[4] = recTest1;
-		Arrays.sort(recTestArray);
-		assertTrue(recTestArray[0] == recTest1);
-		assertTrue(recTestArray[1] == recTest2);
-		assertTrue(recTestArray[2] == recTest3);
-		assertTrue(recTestArray[3] == recTest4);
-		assertTrue(recTestArray[4] == recTest5);
+		Rectangle[] rectangleArray = new Rectangle[4];
+		
+		Rectangle rectangleTest1 = new Rectangle(1,10);
+		
+		Rectangle rectangleTest2 = new Rectangle(2,10);
+		
+		Rectangle rectangleTest3 = new Rectangle(3,10);
+		
+		Rectangle rectangleTest4 = new Rectangle(4,10);
+		
+		rectangleArray[0] = rectangleTest2;
+		
+		rectangleArray[1] = rectangleTest3;
+		
+		rectangleArray[2] = rectangleTest1;
+		
+		rectangleArray[3] = rectangleTest4;
+		
+		Arrays.sort(rectangleArray);
+		
+		assertTrue(rectangleArray[0] == rectangleTest1);
+		
+		assertTrue(rectangleArray[1] == rectangleTest2);
+		
+		assertTrue(rectangleArray[2] == rectangleTest3);
+		
+		assertTrue(rectangleArray[3] == rectangleTest4);
 		
 	}
 	
-	//Cuboid tests.
 	
 	@Test
-	public void Cuboid_Constructor_test() {
-		Cuboid cubTest = new Cuboid(1,1,1);
-		assertTrue(cubTest instanceof Cuboid);
+	public void Cuboid_test() {
+		
+		Cuboid cuboidTest = new Cuboid(1,2,3);
+		
+		assertTrue(cuboidTest instanceof Cuboid);
+		
 	}
 	
 	@Test
-	public void Cuboid_DepthGetter_test() {
-		Cuboid cubTest = new Cuboid(1,2,3);
-		assertEquals(cubTest.getiDepth(), 3);
+	public void Cuboid_Depth_Get_test() {
+		
+		Cuboid cubTest = new Cuboid(4,5,6);
+		
+		assertEquals(cubTest.getiDepth(), 6);
+		
 	}
 	
 	@Test
-	public void Cuboid_DepthSetter_test() {
-		Cuboid cubTest = new Cuboid(1,2,3);
-		cubTest.setiDepth(100);
-		assertEquals(cubTest.getiDepth(), 100);
+	public void Cuboid_Depth_Set_test() {
+		Cuboid cubTest = new Cuboid(7,8,9);
+		
+		cubTest.setiDepth(10);
+		
+		assertEquals(cubTest.getiDepth(), 10);
+		
 	}
 	
 	@Test
