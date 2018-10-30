@@ -7,50 +7,74 @@ public class Rectangle extends Shape implements Comparable<Object> {
 	private int iLength;
 	
 	
-	public Rectangle(int paraW, int paraL) {
+	public Rectangle(int width, int length) {
+		
 		super();
-		this.iWidth = paraW;
-		this.iLength = paraL;
+		
+		this.iWidth = width;
+		
+		this.iLength = length;
+		
 	}
 	
 	public int getiWidth() {
+		
 		return iWidth;
+		
 	}
 	
-	public void setiWidth(int paraW) {
-		this.iWidth = paraW;
+	public void setiWidth(int width) {
+		
+		this.iWidth = width;
+		
 	}
 	
 	public int getiLength() {
+		
 		return iLength;
+		
 	}
 	
-	public void setiLength(int paraL) {
-		this.iLength = paraL;
+	public void setiLength(int length) {
+		
+		this.iLength = length;
+		
 	}
 	
 	@Override
 	public double area() {
+		
 		return this.iWidth * this.iLength;
+		
 	}
 
 	@Override
 	public double perimeter() {
-		return (this.iWidth * 2) + (this.iLength * 2);
+		
+		return this.iWidth * 2 + this.iLength * 2;
+		
 	}
 
 
-	public int compareTo(Object rect) {
-		int returnVal = 0;
+	public int compareTo(Object rectangle) {
 		
-		if (((Rectangle) rect).area() < this.area()) {
-			returnVal = 1;
-		} else if (((Rectangle) rect).area() == this.area()) {
-			returnVal = 0;
-		} else if (((Rectangle) rect).area() > this.area()) {
-			returnVal = -1;
+		int compareNum = 0;
+		
+		if (((Rectangle) rectangle).area() > this.area()) {
+			
+			compareNum = -1;
+			
+		} else if (((Rectangle) rectangle).area() == this.area()) {
+			
+			compareNum = 0;
+			
+		} else if (((Rectangle) rectangle).area() < this.area()) {
+			
+			compareNum = 1;
+			
 		}
 		
-		return returnVal;
+		return compareNum;
 	}
+	
 }
