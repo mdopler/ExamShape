@@ -8,7 +8,7 @@ import java.util.Collections;
 
 import org.junit.Test;
 
-public class ShapeJUnitTests {
+public class ShapeTests {
 	
 	//Rectangle tests.
 
@@ -124,79 +124,112 @@ public class ShapeJUnitTests {
 	@Test
 	public void Cuboid_Depth_Get_test() {
 		
-		Cuboid cubTest = new Cuboid(4,5,6);
+		Cuboid cuboidTest = new Cuboid(4,5,6);
 		
-		assertEquals(cubTest.getiDepth(), 6);
+		assertEquals(cuboidTest.getiDepth(), 6);
 		
 	}
 	
 	@Test
 	public void Cuboid_Depth_Set_test() {
-		Cuboid cubTest = new Cuboid(7,8,9);
+		Cuboid cuboidTest = new Cuboid(7,8,9);
 		
-		cubTest.setiDepth(10);
+		cuboidTest.setiDepth(10);
 		
-		assertEquals(cubTest.getiDepth(), 10);
+		assertEquals(cuboidTest.getiDepth(), 10);
 		
 	}
 	
 	@Test
-	public void Cuboid_volume_test() {
-		Cuboid cubTest = new Cuboid(1,2,3);
-		assertTrue(cubTest.volume() == 6);
+	public void Cuboid_Volume_test() {
+		
+		Cuboid cuboidTest = new Cuboid(1,2,3);
+		
+		assertTrue(cuboidTest.volume() == 6);
+		
 	}
 	
 	@Test
 	public void Cuboid_area_test() {
-		Cuboid cubTest = new Cuboid(1,2,3);
-		assertTrue(cubTest.area() == 22);
+		
+		Cuboid cuboidTest = new Cuboid(4,5,3);
+		
+		assertTrue(cuboidTest.area() == 94);
+		
 	}
 	
 	@Test (expected = UnsupportedOperationException.class)
+	
 	public void Cuboid_perimeter_test() throws UnsupportedOperationException {
-		Cuboid cubTest = new Cuboid(1,2,3);
-		cubTest.perimeter();
+		
+		Cuboid cuboidTest = new Cuboid(2,2,2);
+		
+		cuboidTest.perimeter();
 	}
 	
 	@Test
 	public void Cuboid_SortByVolume_test() {
-		Cuboid cubTest1 = new Cuboid(1,2,3);
-		Cuboid cubTest2 = new Cuboid(3,3,2);
-		Cuboid cubTest3 = new Cuboid(3,2,4);
-		Cuboid cubTest4 = new Cuboid(4,6,2);
-		Cuboid cubTest5 = new Cuboid(5,5,5);
-		ArrayList<Cuboid> ar = new ArrayList<Cuboid>();
-		ar.add(cubTest3);
-		ar.add(cubTest2);
-		ar.add(cubTest5);
-		ar.add(cubTest4);
-		ar.add(cubTest1);
-		Collections.sort(ar, new Cuboid.SortByVolume());
-		assertTrue(ar.get(0) == cubTest1);
-		assertTrue(ar.get(1) == cubTest2);
-		assertTrue(ar.get(2) == cubTest3);
-		assertTrue(ar.get(3) == cubTest4);
-		assertTrue(ar.get(4) == cubTest5);
+		
+		Cuboid cuboidTest1 = new Cuboid(1,2,3);
+		
+		Cuboid cuboidTest2 = new Cuboid(2,3,4);
+		
+		Cuboid cuboidTest3 = new Cuboid(5,4,3);
+		
+		Cuboid cuboidTest4 = new Cuboid(5,6,4);
+		
+		ArrayList<Cuboid> arrayTest = new ArrayList<Cuboid>();
+		
+		arrayTest.add(cuboidTest3);
+		
+		arrayTest.add(cuboidTest1);
+		
+		arrayTest.add(cuboidTest4);
+		
+		arrayTest.add(cuboidTest2);
+		
+		Collections.sort(arrayTest, new Cuboid.SortByVolume());
+		
+		assertTrue(arrayTest.get(0) == cuboidTest1);
+		
+		assertTrue(arrayTest.get(1) == cuboidTest2);
+		
+		assertTrue(arrayTest.get(2) == cuboidTest3);
+		
+		assertTrue(arrayTest.get(3) == cuboidTest4);
+		
 	}
 	
 	@Test
 	public void Cuboid_SortByArea_test() {
-		Cuboid cubTest1 = new Cuboid(1,2,3);
-		Cuboid cubTest2 = new Cuboid(3,3,2);
-		Cuboid cubTest3 = new Cuboid(3,2,4);
-		Cuboid cubTest4 = new Cuboid(4,6,2);
-		Cuboid cubTest5 = new Cuboid(5,5,5);
-		ArrayList<Cuboid> ar = new ArrayList<Cuboid>();
-		ar.add(cubTest3);
-		ar.add(cubTest2);
-		ar.add(cubTest5);
-		ar.add(cubTest4);
-		ar.add(cubTest1);
-		Collections.sort(ar, new Cuboid.SortByArea());
-		assertTrue(ar.get(0) == cubTest1);
-		assertTrue(ar.get(1) == cubTest2);
-		assertTrue(ar.get(2) == cubTest3);
-		assertTrue(ar.get(3) == cubTest4);
-		assertTrue(ar.get(4) == cubTest5);
+		
+		Cuboid cuboidTest1 = new Cuboid(1,2,3);
+		
+		Cuboid cuboidTest2 = new Cuboid(2,3,4);
+		
+		Cuboid cuboidTest3 = new Cuboid(5,4,3);
+		
+		Cuboid cuboidTest4 = new Cuboid(5,6,4);
+		
+		ArrayList<Cuboid> arrayTest = new ArrayList<Cuboid>();
+		
+		arrayTest.add(cuboidTest3);
+		
+		arrayTest.add(cuboidTest2);
+		
+		arrayTest.add(cuboidTest4);
+		
+		arrayTest.add(cuboidTest1);
+		
+		Collections.sort(arrayTest, new Cuboid.SortByArea());
+		
+		assertTrue(arrayTest.get(0) == cuboidTest1);
+		
+		assertTrue(arrayTest.get(1) == cuboidTest2);
+		
+		assertTrue(arrayTest.get(2) == cuboidTest3);
+		
+		assertTrue(arrayTest.get(3) == cuboidTest4);
+		
 	}
 }
