@@ -9,8 +9,6 @@ import java.util.Collections;
 import org.junit.Test;
 
 public class ShapeTests {
-	
-	//Rectangle tests.
 
 	@Test
 	public void Rectangle_test() {
