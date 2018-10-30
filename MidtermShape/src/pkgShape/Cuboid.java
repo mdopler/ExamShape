@@ -53,6 +53,18 @@ public class Cuboid extends Rectangle implements Comparable<Object> {
 		
 	}
 	
+	public static class SortByArea implements Comparator<Object> {
+		
+		SortByArea() {}
+		
+		public int compare(Object cuboid1, Object cuboid2) {
+			
+			return (int) (((Cuboid) cuboid1).area() - ((Cuboid) cuboid2).area());
+			
+		}
+		
+	}
+	
 	public static class SortByVolume implements Comparator<Object> {
 		
 		SortByVolume() {}
@@ -61,18 +73,6 @@ public class Cuboid extends Rectangle implements Comparable<Object> {
 		public int compare(Object cuboid1, Object cuboid2) {
 			
 			return (int) (((Cuboid) cuboid1).volume() - ((Cuboid) cuboid2).volume());
-			
-		}
-		
-	}
-	
-	public static class SortByArea implements Comparator<Object> {
-		
-		SortByArea() {}
-		
-		public int compare(Object cuboid1, Object cuboid2) {
-			
-			return (int) (((Cuboid) cuboid1).area() - ((Cuboid) cuboid2).area());
 			
 		}
 		

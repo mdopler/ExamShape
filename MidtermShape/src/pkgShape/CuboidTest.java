@@ -66,6 +66,39 @@ public class CuboidTest {
 	}
 	
 	@Test
+	public void Cuboid_SortByArea_test() {
+		
+		Cuboid cuboidTest1 = new Cuboid(1,2,3);
+		
+		Cuboid cuboidTest2 = new Cuboid(2,3,4);
+		
+		Cuboid cuboidTest3 = new Cuboid(5,4,3);
+		
+		Cuboid cuboidTest4 = new Cuboid(5,6,4);
+		
+		ArrayList<Cuboid> arrayTest = new ArrayList<Cuboid>();
+		
+		arrayTest.add(cuboidTest3);
+		
+		arrayTest.add(cuboidTest2);
+		
+		arrayTest.add(cuboidTest4);
+		
+		arrayTest.add(cuboidTest1);
+		
+		Collections.sort(arrayTest, new Cuboid.SortByArea());
+		
+		assertTrue(arrayTest.get(0) == cuboidTest1);
+		
+		assertTrue(arrayTest.get(1) == cuboidTest2);
+		
+		assertTrue(arrayTest.get(2) == cuboidTest3);
+		
+		assertTrue(arrayTest.get(3) == cuboidTest4);
+		
+	}
+	
+	@Test
 	public void Cuboid_SortByVolume_test() {
 		
 		Cuboid cuboidTest1 = new Cuboid(1,2,3);
@@ -98,36 +131,4 @@ public class CuboidTest {
 		
 	}
 	
-	@Test
-	public void Cuboid_SortByArea_test() {
-		
-		Cuboid cuboidTest1 = new Cuboid(1,2,3);
-		
-		Cuboid cuboidTest2 = new Cuboid(2,3,4);
-		
-		Cuboid cuboidTest3 = new Cuboid(5,4,3);
-		
-		Cuboid cuboidTest4 = new Cuboid(5,6,4);
-		
-		ArrayList<Cuboid> arrayTest = new ArrayList<Cuboid>();
-		
-		arrayTest.add(cuboidTest3);
-		
-		arrayTest.add(cuboidTest2);
-		
-		arrayTest.add(cuboidTest4);
-		
-		arrayTest.add(cuboidTest1);
-		
-		Collections.sort(arrayTest, new Cuboid.SortByArea());
-		
-		assertTrue(arrayTest.get(0) == cuboidTest1);
-		
-		assertTrue(arrayTest.get(1) == cuboidTest2);
-		
-		assertTrue(arrayTest.get(2) == cuboidTest3);
-		
-		assertTrue(arrayTest.get(3) == cuboidTest4);
-		
-	}
 }
